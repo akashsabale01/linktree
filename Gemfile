@@ -50,7 +50,9 @@ gem "bootsnap", require: false
 
 
 # Custom Gems
+
 gem "devise"
+
 
 
 group :development, :test do
