@@ -1,8 +1,7 @@
-<%= form_with(model: tree) do |form| %>
+<%= form_with(model: tree, local: true, class: "needs-validation") do |form| %>
   <% if tree.errors.any? %>
-    <div style="color: red">
-      <h2><%= pluralize(tree.errors.count, "error") %> prohibited this tree from being saved:</h2>
-
+    <div class="alert alert-danger">
+      <h4><%= pluralize(tree.errors.count, "error") %> prohibited this tree from being saved:</h4>
       <ul>
         <% tree.errors.each do |error| %>
           <li><%= error.full_message %></li>
@@ -11,37 +10,37 @@
     </div>
   <% end %>
 
-  <div>
-    <%= form.label :name, style: "display: block" %>
-    <%= form.text_field :name %>
+  <div class="mb-3">
+    <%= form.label :name, class: "form-label" %>
+    <%= form.text_field :name, class: "form-control" %>
   </div>
 
-  <div>
-    <%= form.label :x, style: "display: block" %>
-    <%= form.text_field :x %>
+  <div class="mb-3">
+    <%= form.label :x, class: "form-label" %>
+    <%= form.text_field :x, class: "form-control" %>
   </div>
 
-  <div>
-    <%= form.label :instagram, style: "display: block" %>
-    <%= form.text_field :instagram %>
+  <div class="mb-3">
+    <%= form.label :instagram, class: "form-label" %>
+    <%= form.text_field :instagram, class: "form-control" %>
   </div>
 
-  <div>
-    <%= form.label :youtube, style: "display: block" %>
-    <%= form.text_field :youtube %>
+  <div class="mb-3">
+    <%= form.label :youtube, class: "form-label" %>
+    <%= form.text_field :youtube, class: "form-control" %>
   </div>
 
-  <div>
-    <%= form.label :user_id, style: "display: block" %>
-    <%= form.number_field :user_id %>
+  <div class="mb-3">
+    <%= form.label :user_id, class: "form-label" %>
+    <%= form.number_field :user_id, class: "form-control" %>
   </div>
 
-  <div>
-    <%= form.label :style, style: "display: block" %>
-    <%= form.text_field :style %>
+  <div class="mb-3">
+    <%= form.label :style, class: "form-label" %>
+    <%= form.text_field :style, class: "form-control" %>
   </div>
 
-  <div>
-    <%= form.submit %>
+  <div class="d-flex justify-content-center">
+    <%= form.submit "Save Tree", class: "btn btn-primary" %>
   </div>
 <% end %>
