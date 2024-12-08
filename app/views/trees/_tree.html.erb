@@ -1,32 +1,12 @@
-<div id="<%= dom_id tree %>">
-  <p>
-    <strong>Name:</strong>
-    <%= tree.name %>
-  </p>
-
-  <p>
-    <strong>X:</strong>
-    <%= tree.x %>
-  </p>
-
-  <p>
-    <strong>Instagram:</strong>
-    <%= tree.instagram %>
-  </p>
-
-  <p>
-    <strong>Youtube:</strong>
-    <%= tree.youtube %>
-  </p>
-
-  <p>
-    <strong>User:</strong>
-    <%= tree.user_id %>
-  </p>
-
-  <p>
-    <strong>Style:</strong>
-    <%= tree.style %>
-  </p>
-
+<div id="<%= dom_id tree %>" class="card mb-4 shadow-lg" style="background: linear-gradient(135deg, #6e7dff, #56cfe1);">
+  <div class="card-header text-center">
+    <h3 class="text-white"><%= tree.name %></h3>
+  </div>
+  <div class="card-body">
+    <p><strong>X:</strong> <%= tree.x %></p>
+    <p><strong>Instagram:</strong> <%= tree.instagram %></p>
+    <p><strong>YouTube:</strong> <%= tree.youtube %></p>
+    <p><strong>User:</strong> <%= tree.user_id %></p>
+    <p><strong>Style:</strong> <%= tree.style %></p>
+  </div>
 </div>

@@ -1,14 +1,38 @@
 <p style="color: green"><%= notice %></p>
 
-<h1>Trees</h1>
+<div class="container my-5">
+  <h1 class="text-center mb-4">Trees</h1>
 
-<div id="trees">
-  <% @trees.each do |tree| %>
-    <%= render tree %>
-    <p>
-      <%= link_to "Show this tree", tree %>
-    </p>
-  <% end %>
+  <div class="row">
+    <% @trees.each do |tree| %>
+      <div class="col-md-8 mb-4 mx-auto">
+        <div class="card shadow border-0" style="background: linear-gradient(135deg, #6e7dff, #56cfe1);">
+          <div class="card-body text-center">
+            <h5 class="card-title text-white mb-3 fs-2"><%= tree.name %></h5>
+
+            <div class="d-flex justify-content-center flex-column mb-3">
+              <% if tree.instagram.present? %>
+                <%= link_to "Instagram", tree.instagram, target: "_blank", class: "btn btn-outline-light mx-2 mb-3" %>
+              <% end %>
+              <% if tree.youtube.present? %>
+                <%= link_to "YouTube", tree.youtube, target: "_blank", class: "btn btn-outline-light mx-2 mb-3" %>
+              <% end %>
+               <% if tree.x.present? %>
+                <%= link_to "X", tree.x, target: "_blank", class: "btn btn-outline-light mx-2" %>
+              <% end %>
+            </div>
+            
+
+            <div>
+              <%= link_to "View Tree", tree_path(tree), class: "btn btn-light mt-3" %>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="text-center mt-4">
+    <%= link_to "Add New Tree", new_tree_path, class: "btn btn-success" %>
+  </div>
 </div>
-
-<%= link_to "New tree", new_tree_path %>
