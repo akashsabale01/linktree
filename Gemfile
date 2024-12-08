@@ -52,7 +52,7 @@ gem "bootsnap", require: false
 # Custom Gems
 
 gem "devise"
-
+gem 'friendly_id', '~> 5.5.0'
 
 
 group :development, :test do
