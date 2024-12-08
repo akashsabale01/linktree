@@ -4,7 +4,8 @@ class TreesController < ApplicationController
 
   # GET /trees or /trees.json
   def index
-    @trees = Tree.all
+    # @trees = Tree.all
+    @trees = Tree.where(user_id: current_user.id)
   end
 
   # GET /trees/1 or /trees/1.json

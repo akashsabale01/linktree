@@ -4,5 +4,9 @@
     <p class="lead text-muted">Manage your trees and links effortlessly!</p>
 
     <%= link_to "New Tree", new_tree_path, class: "btn btn-success btn-lg mt-3" %>
+
+    <% if user_signed_in? %>
+      <%= link_to "View My Tree", current_user.tree , class: "btn btn-primary btn-lg mt-3"  %>
+    <% end %>
   </div>
 </div>
