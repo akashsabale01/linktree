@@ -4,6 +4,35 @@
   <div class="container">
     <h1 class="text-center mb-4 text-white">My Trees</h1>
 
+    <% if @trees.empty? %>
+        <h2 class="text-center mt-4"> You have not created any tree... </h2>
+    <% else%>
+      <div class="row justify-content-center">
+        <% @trees.each do |tree| %>
+        <div class="col-md-6 mb-4">
+          <div class="text-center p-4 rounded shadow-lg" style="background: #ffffff; border-radius: 15px;">
+            <h2 class="text-dark fs-4 mb-4"><%= tree.name %></h2>
+            
+            <div class="d-flex flex-column align-items-center">
+              <% if tree.instagram.present? %>
+                <%= link_to "Instagram", tree.instagram, target: "_blank", class: "btn btn-linktree mb-3" %>
+              <% end %>
+              <% if tree.youtube.present? %>
+                <%= link_to "YouTube", tree.youtube, target: "_blank", class: "btn btn-linktree mb-3" %>
+              <% end %>
+              <% if tree.x.present? %>
+                <%= link_to "X", tree.x, target: "_blank", class: "btn btn-linktree mb-3" %>
+              <% end %>
+            </div>
+             <div>
+              <%= link_to "View Tree", tree_path(tree), class: "btn btn-linktree-view mt-3" %>
+            </div>
+          </div>
+        </div>
+        <% end %>
+      </div>
+    <% end%>
+
     <div class="row justify-content-center">
       <% @trees.each do |tree| %>
         <div class="col-md-6 mb-4">
@@ -30,7 +59,7 @@
     </div>
 
     <div class="text-center mt-4">
-      <%= link_to "Add New Tree", new_tree_path, class: "btn btn-primary px-4 py-2" %>
+      <%= link_to "Create New Tree", new_tree_path, class: "btn btn-primary px-4 py-2" %>
     </div>
   </div>
 </div>

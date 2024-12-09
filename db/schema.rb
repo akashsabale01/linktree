@@ -10,14 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_12_08_074611) do
+ActiveRecord::Schema[7.0].define(version: 2024_12_09_111358) do
   create_table "trees", force: :cascade do |t|
     t.string "name"
     t.string "x"
     t.string "instagram"
     t.string "youtube"
     t.integer "user_id"
-    t.string "style"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "slug"
