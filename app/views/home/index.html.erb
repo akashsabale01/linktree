@@ -1,11 +1,12 @@
+<div style="background: linear-gradient(to right, #1e90ff, #87ceeb); min-height: 100vh; padding: 50px 0;">
 <div class="container my-5">
   <div class="text-center">
-    <h1 class="display-5 text-primary">Everything you are. In one, simple link in bio. </h1>
+    <h1 class="display-5 text-white fw-bold">Everything you are. In one, simple link in bio. </h1>
     <p class="lead text-muted">One link to help you share everything you create, curate and sell from your Instagram, TikTok, Twitter, YouTube and other social media profiles.</p>
 
     <% if user_signed_in? %>
       <% if current_user.tree.present? %>
-        <%= link_to "View My Tree", current_user.tree , class: "btn btn-primary btn-lg mt-3"  %>
+        <%= link_to "View My Tree", current_user.tree , class: "btn btn-success btn-lg mt-3"  %>
       <% else %>
        <%= link_to "Create your own Link Tree", new_tree_path, class: "btn btn-success btn-lg mt-3" %>
       <% end %>
@@ -14,3 +15,5 @@
     <% end %>
   </div>
 </div>
+</div>
+

@@ -1,10 +1,11 @@
-<div class="container my-5">
-  <h1 class="text-center mb-4">Log In to Linktree</h1>
+<div style="background: linear-gradient(to right, #1e90ff, #87ceeb); min-height: 100vh; padding: 50px 0;">
+<div class="container mb-5">
+  <h1 class="text-center mb-4 text-white">Log In to Linktree</h1>
   <div class="row justify-content-center">
     <div class="col-md-6">
       <div class="card shadow">
         <div class="card-body">
-          <h2 class="text-center">Log In</h2>
+            <h2 class="text-center">Login</h2>
           <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
             <div class="mb-3">
               <%= f.label :email, class: "form-label" %>
@@ -22,9 +23,13 @@
             <% end %>
             <%= f.submit "Log In", class: "btn btn-primary w-100" %>
           <% end %>
+          <div class="text-center mt-3">
           <%= render "devise/shared/links" %>
+          </div>
         </div>
       </div>
     </div>
   </div>
 </div>
+</div>
+
