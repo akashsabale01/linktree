@@ -1,38 +1,36 @@
-<!-- <p style="color: green"><%= notice %></p> -->
+<%= stylesheet_link_tag "tree_home_page" %>
 
-<div class="container my-5">
-  <h1 class="text-center mb-4">Trees</h1>
+<div style="background: linear-gradient(to right, #1e90ff, #87ceeb); min-height: 100vh; padding: 50px 0;">
+  <div class="container">
+    <h1 class="text-center mb-4 text-white">My Trees</h1>
 
-  <div class="row">
-    <% @trees.each do |tree| %>
-      <div class="col-md-8 mb-4 mx-auto">
-        <div class="card shadow border-0" style="background: linear-gradient(135deg, #6e7dff, #56cfe1);">
-          <div class="card-body text-center">
-            <h5 class="card-title text-white mb-3 fs-2"><%= tree.name %></h5>
-
-            <div class="d-flex justify-content-center flex-column mb-3">
+    <div class="row justify-content-center">
+      <% @trees.each do |tree| %>
+        <div class="col-md-6 mb-4">
+          <div class="text-center p-4 rounded shadow-lg" style="background: #ffffff; border-radius: 15px;">
+            <h2 class="text-dark fs-4 mb-4"><%= tree.name %></h2>
+            
+            <div class="d-flex flex-column align-items-center">
               <% if tree.instagram.present? %>
-                <%= link_to "Instagram", tree.instagram, target: "_blank", class: "btn btn-outline-light mx-2 mb-3" %>
+                <%= link_to "Instagram", tree.instagram, target: "_blank", class: "btn btn-linktree mb-3" %>
               <% end %>
               <% if tree.youtube.present? %>
-                <%= link_to "YouTube", tree.youtube, target: "_blank", class: "btn btn-outline-light mx-2 mb-3" %>
+                <%= link_to "YouTube", tree.youtube, target: "_blank", class: "btn btn-linktree mb-3" %>
               <% end %>
-               <% if tree.x.present? %>
-                <%= link_to "X", tree.x, target: "_blank", class: "btn btn-outline-light mx-2" %>
+              <% if tree.x.present? %>
+                <%= link_to "X", tree.x, target: "_blank", class: "btn btn-linktree mb-3" %>
               <% end %>
             </div>
-            
-
-            <div>
-              <%= link_to "View Tree", tree_path(tree), class: "btn btn-light mt-3" %>
+             <div>
+              <%= link_to "View Tree", tree_path(tree), class: "btn btn-linktree-view mt-3" %>
             </div>
           </div>
         </div>
-      </div>
-    <% end %>
-  </div>
+      <% end %>
+    </div>
 
-  <div class="text-center mt-4">
-    <%= link_to "Add New Tree", new_tree_path, class: "btn btn-success" %>
+    <div class="text-center mt-4">
+      <%= link_to "Add New Tree", new_tree_path, class: "btn btn-primary px-4 py-2" %>
+    </div>
   </div>
 </div>

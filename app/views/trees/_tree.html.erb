@@ -1,11 +1,17 @@
-<div id="<%= dom_id tree %>" class="card mb-4 shadow-lg" style="background: linear-gradient(135deg, #6e7dff, #56cfe1);">
-  <div class="card-header text-center">
-    <h3 class="text-white"><%= tree.name %></h3>
-  </div>
-  <div class="card-body">
-    <p><strong>X:</strong> <%= tree.x %></p>
-    <p><strong>Instagram:</strong> <%= tree.instagram %></p>
-    <p><strong>YouTube:</strong> <%= tree.youtube %></p>
-    <p><strong>Style:</strong> <%= tree.style %></p>
-  </div>
+<div id="<%= dom_id @tree %>">
+        <div class="card-body">
+          <h3 class=" fs-1 mb-4"><%= @tree.name %></h3>
+
+          <div class="d-flex flex-column align-items-center">
+            <% if @tree.x.present? %>
+              <%= link_to "X", @tree.x, target: "_blank", class: "btn btn-linktree my-2" %>
+            <% end %>
+            <% if @tree.instagram.present? %>
+              <%= link_to "Instagram", @tree.instagram, target: "_blank", class: "btn btn-linktree my-2" %>
+            <% end %>
+            <% if @tree.youtube.present? %>
+              <%= link_to "YouTube", @tree.youtube, target: "_blank", class: "btn btn-linktree my-2" %>
+            <% end %>
+          </div>
+        </div>
 </div>
